@@ -1,6 +1,9 @@
 
 own-memo.md
 
+# ignore css created by sccs
+src/*.css
+
 # Logs
 logs
 *.log
