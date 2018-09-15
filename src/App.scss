@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -18,8 +19,27 @@
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.App-main {
+  display: flex;
+  height: calc(100% - (150px + 20px * 2));
+  .input-area {
+    border: solid;
+    box-sizing: border-box;
+    height: 100%;
+    flex:5;
+  }
+  .control-area {
+    border: solid;
+    box-sizing: border-box;
+    height: 100%;
+    flex:1;
+  }
+  .display-area {
+    border: solid;
+    box-sizing: border-box;
+    height: 100%;
+    flex:4;
+  }
 }
 
 @keyframes App-logo-spin {
