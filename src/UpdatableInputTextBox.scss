@@ -1,0 +1,12 @@
+.InputTextBox {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  textarea {
+    height: 99%;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    resize: none;
+  }
+}
