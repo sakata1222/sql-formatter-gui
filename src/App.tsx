@@ -1,10 +1,25 @@
 import * as React from 'react';
+import sqlFormatter from 'sql-formatter';
 import './App.css';
-import UpdatableInputTextBox from './UpdatableInputTextBox';
+import InputTextBox from './InputTextBox';
+import ReadOnlyTextBox from './ReadOnlyTextBox';
 
 import logo from './logo.svg';
 
-class App extends React.Component {
+interface IState {
+  inputSql: string;
+  formattedSql: string;
+}
+class App extends React.Component<any, IState> {
+  public constructor(props: any) {
+    super(props);
+    this.state = {
+      formattedSql: '',
+      inputSql: ''
+    };
+    this.handleInputAreaChanged = this.handleInputAreaChanged.bind(this);
+  }
+
   public render() {
     return (
       <div className="App">
@@ -14,17 +29,23 @@ class App extends React.Component {
         </header>
         <div className="App-main">
           <div className="input-area">
-            <UpdatableInputTextBox placeholder="Input SQL" />
+            <InputTextBox placeholder="Please input SQL" inputEventHandler={this.handleInputAreaChanged} />
           </div>
           <div className="control-area">
             <p>Control area</p>
           </div>
           <div className="display-area">
-            <p>Display Area</p>
+            <div className="formatted-area">
+              <ReadOnlyTextBox placeholder="This area shows formatted input SQL" formattedSql={this.state.formattedSql} />
+            </div>
           </div>
         </div>
       </div>
     );
+  }
+
+  private handleInputAreaChanged(event: React.ChangeEvent<HTMLTextAreaElement>) {
+    this.setState({ formattedSql: sqlFormatter.format(event.target.value) });
   }
 }
 
