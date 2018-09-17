@@ -1,62 +1,58 @@
 .App {
   height: 100%;
+  margin: 0px;
+  padding: 0px;
   text-align: center;
 }
 
-.App-logo {
-  height: 80px;
-  animation: App-logo-spin infinite 20s linear;
-}
-
+$appHeaderHeight: 8.5rem;
 .App-header {
-  height: 150px;
-  padding: 20px;
-  color: white;
-  background-color: #222;
-}
-
-.App-title {
-  font-size: 1.5em;
+  box-sizing: border-box;
+  height: $appHeaderHeight;
+  margin: 0px;
+  padding: 0px;
 }
 
 .App-main {
   display: flex;
-  height: calc(100% - (150px + 20px * 2));
+  height: calc(100% - #{$appHeaderHeight});
   .input-area {
     flex: 5;
     box-sizing: border-box;
     height: 100%;
-    border: solid;
+    padding: 5px;
   }
+  $buttonAreaWidth: 70px;
   .display-area {
     flex: 5;
     box-sizing: border-box;
     height: 100%;
-    border: solid;
-    $minifiedAreaHeight: 50px;
+    $minifiedAreaHeight: 70px;
     .formatted-area {
       display: flex;
       box-sizing: border-box;
-      height: calc(100% - #{$minifiedAreaHeight} - 2px);
-      border: solid 1px;
+      height: calc(100% - #{$minifiedAreaHeight});
     }
     .minified-area {
       display: flex;
       box-sizing: border-box;
       height: $minifiedAreaHeight;
-      border: solid 1px;
     }
     .button-area {
-      flex: 1;
       box-sizing: border-box;
-      box-sizing: border-box;
+      width: $buttonAreaWidth;
       margin-top: auto;
       margin-bottom: auto;
+      .button-wrapper {
+        box-sizing: border-box;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
     }
     .text-area {
-      flex: 8;
       box-sizing: border-box;
-      border: solid 1px;
+      width: calc(100% - #{$buttonAreaWidth});
+      padding: 5px;
     }
   }
 }
