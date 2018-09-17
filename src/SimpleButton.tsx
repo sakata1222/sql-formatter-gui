@@ -8,6 +8,7 @@ interface IProps {
     event: React.MouseEvent<HTMLButtonElement>
   ) => void;
   readonly buttonClass?: string;
+  readonly tooltip?: string;
 }
 class SimpleButton extends React.Component<IProps> {
   public render() {
@@ -17,6 +18,7 @@ class SimpleButton extends React.Component<IProps> {
           className={"button " + this.props.buttonClass}
           type="button"
           onClick={this.props.onClickEventHandler}
+          data-tooltip={this.props.tooltip}
         >
           {this.props.buttonText}
         </button>
