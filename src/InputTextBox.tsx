@@ -3,6 +3,7 @@ import "./InputTextBox.css";
 
 interface IProps {
   readonly placeholder: string;
+  readonly value?: string;
   readonly inputEventHandler: (
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
@@ -13,6 +14,7 @@ class InputTextBox extends React.Component<IProps> {
     return (
       <div className="InputTextBox">
         <textarea
+          value={this.props.value}
           placeholder={this.props.placeholder}
           onChange={this.props.inputEventHandler}
         />
