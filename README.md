@@ -2,20 +2,19 @@
 
 Work in Progress..
 
-![image](https://user-images.githubusercontent.com/6317652/45597004-5abe7e00-ba00-11e8-8e55-644913f6f237.png)
-
+![image](https://user-images.githubusercontent.com/6317652/45602668-0e555b80-ba5d-11e8-8357-c6680d6c9b73.png)
 
 ## DONE
 
 - Show formatted input SQL in the right area.
+- Show minified input SQL in the right bottom area.
 
 ## WIP
 
-- Show minified input SQL in the right bottom area.
+- Add button to copy for formatted SQLs.
 
 ## TODO
 
-- Add button to copy for formatted SQLs.
 - Add button to update the left area by the formatted sql.
 - Revise styles.
 - Revise README.md
