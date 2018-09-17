@@ -2,12 +2,12 @@ import { pd } from "node-pretty-data";
 import * as React from "react";
 import sqlFormatter from "sql-formatter";
 
-import "./App.css";
 import InputTextBox from "./InputTextBox";
 import ReadOnlyTextBox from "./ReadOnlyTextBox";
-import SimpleButton from "./SimpleButton";
 
-import logo from "./logo.svg";
+import "./App.css";
+import "./bulma.css";
+import SimpleButton from "./SimpleButton";
 
 interface IState {
   inputSql: string;
@@ -39,8 +39,13 @@ class App extends React.Component<{}, IState> {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <div className="hero is-info is-bold">
+            <div className="hero-body">
+              <div className="container">
+                <h1 className="title">SQL Formatter</h1>
+              </div>
+            </div>
+          </div>
         </header>
         <div className="App-main">
           <div className="input-area">
@@ -53,14 +58,20 @@ class App extends React.Component<{}, IState> {
           <div className="display-area">
             <div className="formatted-area">
               <div className="button-area">
-                <SimpleButton
-                  buttonText="copy"
-                  onClickEventHandler={this.copyFormattedSql}
-                />
-                <SimpleButton
-                  buttonText="<<"
-                  onClickEventHandler={this.updateInputAreaByFormattedSql}
-                />
+                <div className="button-wrapper">
+                  <SimpleButton
+                    buttonClass="is-primary is-rounded is-fullwidth"
+                    buttonText="copy"
+                    onClickEventHandler={this.copyFormattedSql}
+                  />
+                </div>
+                <div className="button-wrapper">
+                  <SimpleButton
+                    buttonClass="is-primary is-rounded is-fullwidth"
+                    buttonText="<<"
+                    onClickEventHandler={this.updateInputAreaByFormattedSql}
+                  />
+                </div>
               </div>
               <div className="text-area">
                 <ReadOnlyTextBox
@@ -71,17 +82,18 @@ class App extends React.Component<{}, IState> {
             </div>
             <div className="minified-area">
               <div className="button-area">
-                <div className="button-area">
-                  <SimpleButton
-                    buttonText="copy"
-                    onClickEventHandler={this.copyMinifiedSql}
-                  />
-                </div>
+                <SimpleButton
+                  buttonClass="is-primary is-rounded is-fullwidth"
+                  buttonText="copy"
+                  onClickEventHandler={this.copyMinifiedSql}
+                />
               </div>
               <div className="text-area">
                 <ReadOnlyTextBox
                   placeholder="This area shows minified input SQL"
                   formattedSql={this.state.minifiedSql}
+                  wrap="off"
+                  class="no-scroll"
                 />
               </div>
             </div>

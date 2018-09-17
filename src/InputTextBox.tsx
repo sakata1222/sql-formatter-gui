@@ -14,6 +14,7 @@ class InputTextBox extends React.Component<IProps> {
     return (
       <div className="InputTextBox">
         <textarea
+          className="box"
           value={this.props.value}
           placeholder={this.props.placeholder}
           onChange={this.props.inputEventHandler}
