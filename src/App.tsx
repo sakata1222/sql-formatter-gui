@@ -5,6 +5,7 @@ import sqlFormatter from "sql-formatter";
 import "./App.css";
 import InputTextBox from "./InputTextBox";
 import ReadOnlyTextBox from "./ReadOnlyTextBox";
+import SimpleButton from "./SimpleButton";
 
 import logo from "./logo.svg";
 
@@ -13,7 +14,10 @@ interface IState {
   formattedSql: string;
   minifiedSql: string;
 }
-class App extends React.Component<any, IState> {
+class App extends React.Component<{}, IState> {
+  private copyFormattedSql: (event: any) => void;
+  private copyMinifiedSql: (event: any) => void;
+
   public constructor(props: any) {
     super(props);
     this.state = {
@@ -22,6 +26,10 @@ class App extends React.Component<any, IState> {
       minifiedSql: ""
     };
     this.handleInputAreaChanged = this.handleInputAreaChanged.bind(this);
+    this.copyFormattedSql = (event: any) =>
+      this.copyTextToClipBoard(this.state.formattedSql);
+    this.copyMinifiedSql = (event: any) =>
+      this.copyTextToClipBoard(this.state.minifiedSql);
   }
 
   public render() {
@@ -38,21 +46,36 @@ class App extends React.Component<any, IState> {
               inputEventHandler={this.handleInputAreaChanged}
             />
           </div>
-          <div className="control-area">
-            <p>Control area</p>
-          </div>
           <div className="display-area">
             <div className="formatted-area">
-              <ReadOnlyTextBox
-                placeholder="This area shows formatted input SQL"
-                formattedSql={this.state.formattedSql}
-              />
+              <div className="button-area">
+                <SimpleButton
+                  buttonText="copy"
+                  onClickEventHandler={this.copyFormattedSql}
+                />
+              </div>
+              <div className="text-area">
+                <ReadOnlyTextBox
+                  placeholder="This area shows formatted input SQL"
+                  formattedSql={this.state.formattedSql}
+                />
+              </div>
             </div>
             <div className="minified-area">
-              <ReadOnlyTextBox
-                placeholder="This area shows minified input SQL"
-                formattedSql={this.state.minifiedSql}
-              />
+              <div className="button-area">
+                <div className="button-area">
+                  <SimpleButton
+                    buttonText="copy"
+                    onClickEventHandler={this.copyMinifiedSql}
+                  />
+                </div>
+              </div>
+              <div className="text-area">
+                <ReadOnlyTextBox
+                  placeholder="This area shows minified input SQL"
+                  formattedSql={this.state.minifiedSql}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -68,6 +91,17 @@ class App extends React.Component<any, IState> {
       formattedSql,
       minifiedSql: pd.sqlmin(formattedSql)
     });
+  }
+
+  private copyTextToClipBoard(target: string) {
+    const divTemp = document.createElement("div");
+    divTemp.appendChild(document.createElement("pre")).textContent = target;
+
+    document.body.appendChild(divTemp);
+    document.getSelection().selectAllChildren(divTemp);
+    document.execCommand("copy");
+
+    document.body.removeChild(divTemp);
   }
 }
 
