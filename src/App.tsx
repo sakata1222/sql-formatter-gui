@@ -25,11 +25,14 @@ class App extends React.Component<{}, IState> {
       inputSql: "",
       minifiedSql: ""
     };
-    this.handleInputAreaChanged = this.handleInputAreaChanged.bind(this);
+    this.updateDisplayAreaByInput = this.updateDisplayAreaByInput.bind(this);
     this.copyFormattedSql = (event: any) =>
       this.copyTextToClipBoard(this.state.formattedSql);
     this.copyMinifiedSql = (event: any) =>
       this.copyTextToClipBoard(this.state.minifiedSql);
+    this.updateInputAreaByFormattedSql = this.updateInputAreaByFormattedSql.bind(
+      this
+    );
   }
 
   public render() {
@@ -42,8 +45,9 @@ class App extends React.Component<{}, IState> {
         <div className="App-main">
           <div className="input-area">
             <InputTextBox
+              value={this.state.inputSql}
               placeholder="Please input SQL"
-              inputEventHandler={this.handleInputAreaChanged}
+              inputEventHandler={this.updateDisplayAreaByInput}
             />
           </div>
           <div className="display-area">
@@ -52,6 +56,10 @@ class App extends React.Component<{}, IState> {
                 <SimpleButton
                   buttonText="copy"
                   onClickEventHandler={this.copyFormattedSql}
+                />
+                <SimpleButton
+                  buttonText="<<"
+                  onClickEventHandler={this.updateInputAreaByFormattedSql}
                 />
               </div>
               <div className="text-area">
@@ -83,14 +91,19 @@ class App extends React.Component<{}, IState> {
     );
   }
 
-  private handleInputAreaChanged(
+  private updateDisplayAreaByInput(
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) {
     const formattedSql = sqlFormatter.format(event.target.value);
     this.setState({
       formattedSql,
+      inputSql: event.target.value,
       minifiedSql: pd.sqlmin(formattedSql)
     });
+  }
+
+  private updateInputAreaByFormattedSql(event: any) {
+    this.setState({ inputSql: this.state.formattedSql });
   }
 
   private copyTextToClipBoard(target: string) {
