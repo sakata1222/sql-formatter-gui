@@ -8,10 +8,13 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-scripts-ts": "2.17.0",
+    "serve": "^10.0.1",
     "sql-formatter": "^2.3.1"
   },
   "scripts": {
-    "start": "npm-run-all -p watch-css start-ts",
+    "start": "npm run build && npm run serve",
+    "serve": "serve -s build",
+    "start-dev": "npm-run-all -p watch-css start-ts",
     "start-ts": "react-scripts-ts start",
     "build": "npm run build-css && react-scripts-ts build",
     "build-css": "node-sass-chokidar src/ -o src/",
