@@ -22,7 +22,7 @@ npm run start-dev
 
 ## The screen image
 
-![image](https://user-images.githubusercontent.com/6317652/45630066-d852be80-bad2-11e8-9039-4ba33dd7c528.png)
+![image](./demo_images/demo.gif)
 
 ## Note
 
