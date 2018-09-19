@@ -8,7 +8,7 @@
 npm start
 ```
 
-If you already have built the sources, you can start the service as follows:
+If you have already built the sources, you can start the service as follows:
 
 ```bash
 npm run serve
