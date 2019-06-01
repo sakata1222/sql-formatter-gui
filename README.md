@@ -1,6 +1,22 @@
 # SQL formatter GUI
 
+![image](./demo_images/demo.gif)
+
 ## How to run
+
+### Container
+
+build a image
+
+```bash
+docker build . -t sql-formatter
+```
+
+run as a container
+
+```bash
+docker run -p <your-port>:5000 sql-formatter
+```
 
 ### Production mode
 
@@ -19,7 +35,3 @@ npm run serve
 ```bash
 npm run start-dev
 ```
-
-## The screen image
-
-![image](./demo_images/demo.gif)
