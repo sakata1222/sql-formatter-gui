@@ -126,7 +126,10 @@ class App extends React.Component<{}, IState> {
     divTemp.appendChild(document.createElement("pre")).textContent = target;
 
     document.body.appendChild(divTemp);
-    document.getSelection().selectAllChildren(divTemp);
+    const selection = document.getSelection();
+    if (selection != null) {
+      selection.selectAllChildren(divTemp);
+    }
     document.execCommand("copy");
 
     document.body.removeChild(divTemp);
