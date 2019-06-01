@@ -9,7 +9,7 @@
 build a image
 
 ```bash
-docker build . -t sql-formatter
+make docker-build
 ```
 
 run as a container
