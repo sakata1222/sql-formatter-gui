@@ -38,14 +38,8 @@ class App extends React.Component<{}, IState> {
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <div className="hero is-info is-bold">
-            <div className="hero-body">
-              <div className="container">
-                <h1 className="title">SQL Formatter</h1>
-              </div>
-            </div>
-          </div>
+        <header className="App-header has-background-info">
+          <div className="title is-3 has-text-white-ter has-text-weight-bold">SQL Formatter</div>
         </header>
         <div className="App-main">
           <div className="input-area">
@@ -60,7 +54,7 @@ class App extends React.Component<{}, IState> {
               <div className="button-area">
                 <div className="button-wrapper">
                   <SimpleButton
-                    buttonClass="is-primary is-rounded is-fullwidth tooltip"
+                    buttonClass="is-info is-rounded is-fullwidth tooltip"
                     buttonText="copy"
                     onClickEventHandler={this.copyFormattedSql}
                     tooltip="Copy the formatted SQL to the clipboard"
@@ -68,7 +62,7 @@ class App extends React.Component<{}, IState> {
                 </div>
                 <div className="button-wrapper">
                   <SimpleButton
-                    buttonClass="is-primary is-rounded is-fullwidth tooltip"
+                    buttonClass="is-info is-rounded is-fullwidth tooltip"
                     buttonText="<<"
                     onClickEventHandler={this.updateInputAreaByFormattedSql}
                     tooltip="Update the input area by the formatted SQL"
@@ -85,7 +79,7 @@ class App extends React.Component<{}, IState> {
             <div className="minified-area">
               <div className="button-area">
                 <SimpleButton
-                  buttonClass="is-primary is-rounded is-fullwidth tooltip"
+                  buttonClass="is-info is-rounded is-fullwidth tooltip"
                   buttonText="copy"
                   onClickEventHandler={this.copyMinifiedSql}
                   tooltip="Copy the minified SQL to the clipboard"

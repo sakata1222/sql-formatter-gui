@@ -5,12 +5,15 @@
   text-align: center;
 }
 
-$appHeaderHeight: 8.5rem;
+$appHeaderHeight: 3.0rem;
 .App-header {
   box-sizing: border-box;
   height: $appHeaderHeight;
   margin: 0px;
   padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-main {
