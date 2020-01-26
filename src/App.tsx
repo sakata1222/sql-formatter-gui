@@ -54,7 +54,7 @@ class App extends React.Component<{}, IState> {
               <div className="button-area">
                 <div className="button-wrapper">
                   <SimpleButton
-                    buttonClass="is-info is-rounded is-fullwidth tooltip"
+                    buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
                     buttonText="copy"
                     onClickEventHandler={this.copyFormattedSql}
                     tooltip="Copy the formatted SQL to the clipboard"
@@ -62,7 +62,7 @@ class App extends React.Component<{}, IState> {
                 </div>
                 <div className="button-wrapper">
                   <SimpleButton
-                    buttonClass="is-info is-rounded is-fullwidth tooltip"
+                    buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
                     buttonText="<<"
                     onClickEventHandler={this.updateInputAreaByFormattedSql}
                     tooltip="Update the input area by the formatted SQL"
@@ -79,7 +79,7 @@ class App extends React.Component<{}, IState> {
             <div className="minified-area">
               <div className="button-area">
                 <SimpleButton
-                  buttonClass="is-info is-rounded is-fullwidth tooltip"
+                  buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
                   buttonText="copy"
                   onClickEventHandler={this.copyMinifiedSql}
                   tooltip="Copy the minified SQL to the clipboard"
