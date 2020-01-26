@@ -15,7 +15,7 @@ make docker-build
 run as a container
 
 ```bash
-docker run -p <your-port>:5000 sql-formatter
+docker run --rm -p <your-port>:5000 sql-formatter
 ```
 
 ### Production mode
