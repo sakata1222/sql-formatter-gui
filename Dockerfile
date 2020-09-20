@@ -1,8 +1,8 @@
 FROM node:lts-alpine as build
 WORKDIR /tmp/repo
 COPY . .
-RUN npm install --production && \
-  npm run build
+RUN yarn install --production && \
+  yarn build
 
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html/

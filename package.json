@@ -3,38 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@creativebulma/bulma-tooltip": "^1.2.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.5",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.1",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
-    "browserslist": "^4.14.3",
     "bulma": "^0.9.0",
-    "bulma-tooltip": "^3.0.2",
-    "gpm": "^3.0.1",
-    "node-pretty-data": "^0.40.1",
-    "node-sass-chokidar": "^1.5.0",
+    "node-sass": "^4.14.1",
+    "pretty-data": "^0.40.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3",
-    "serve": "^11.3.2",
+    "react-scripts": "3.4.3",
     "sql-formatter": "^2.3.3",
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "start": "npm run build && npm run serve",
+    "start": "yarn build && yarn serve",
+    "start:dev": "yarn lint && react-scripts start",
+    "build": "react-scripts build",
     "serve": "serve -s build",
-    "start-dev": "npm-run-all -p watch-css start-ts",
-    "start-ts": "react-scripts start",
-    "build": "npm run build-css && react-scripts build",
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "prettier-stylelint": "^0.4.2",
-    "stylelint-config-rational-order": "0.1.2"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "yarn lint --fix"
   },
   "browserslist": {
     "production": [
@@ -47,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "prettier": "^2.1.2",
+    "serve": "^11.3.2"
   }
 }

@@ -1,133 +1,106 @@
-import { pd } from "node-pretty-data";
-import * as React from "react";
-import sqlFormatter from "sql-formatter";
+import { pd } from 'pretty-data';
+import React, { useState } from 'react';
+import sqlFormatter from 'sql-formatter';
 
-import InputTextBox from "./InputTextBox";
-import ReadOnlyTextBox from "./ReadOnlyTextBox";
+import InputTextBox from './InputTextBox';
+import ReadOnlyTextBox from './ReadOnlyTextBox';
 
-import "./App.css";
-import "./bulma.css";
-import SimpleButton from "./SimpleButton";
+import './App.scss';
+import './bulma.scss';
+import SimpleButton from './SimpleButton';
 
-interface IState {
-  inputSql: string;
-  formattedSql: string;
-  minifiedSql: string;
-}
-class App extends React.Component<{}, IState> {
-  private copyFormattedSql: (event: any) => void;
-  private copyMinifiedSql: (event: any) => void;
+function App() {
+  const [inputSql, setInputSql] = useState('');
+  const [formattedSql, setFormattedSql] = useState('');
+  const [minifiedSql, setMinifiedSql] = useState('');
 
-  public constructor(props: any) {
-    super(props);
-    this.state = {
-      formattedSql: "",
-      inputSql: "",
-      minifiedSql: ""
-    };
-    this.updateDisplayAreaByInput = this.updateDisplayAreaByInput.bind(this);
-    this.copyFormattedSql = (event: any) =>
-      this.copyTextToClipBoard(this.state.formattedSql);
-    this.copyMinifiedSql = (event: any) =>
-      this.copyTextToClipBoard(this.state.minifiedSql);
-    this.updateInputAreaByFormattedSql = this.updateInputAreaByFormattedSql.bind(
-      this
-    );
-  }
-
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header has-background-info">
-          <div className="title is-3 has-text-white-ter has-text-weight-bold">SQL Formatter</div>
-        </header>
-        <div className="App-main">
-          <div className="input-area">
-            <InputTextBox
-              value={this.state.inputSql}
-              placeholder="Please input SQL"
-              inputEventHandler={this.updateDisplayAreaByInput}
-            />
-          </div>
-          <div className="display-area">
-            <div className="formatted-area">
-              <div className="button-area">
-                <div className="button-wrapper">
-                  <SimpleButton
-                    buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
-                    buttonText="copy"
-                    onClickEventHandler={this.copyFormattedSql}
-                    tooltip="Copy the formatted SQL to the clipboard"
-                  />
-                </div>
-                <div className="button-wrapper">
-                  <SimpleButton
-                    buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
-                    buttonText="<<"
-                    onClickEventHandler={this.updateInputAreaByFormattedSql}
-                    tooltip="Update the input area by the formatted SQL"
-                  />
-                </div>
-              </div>
-              <div className="text-area">
-                <ReadOnlyTextBox
-                  placeholder="This area shows formatted input SQL"
-                  formattedSql={this.state.formattedSql}
-                />
-              </div>
-            </div>
-            <div className="minified-area">
-              <div className="button-area">
+  const onInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const input = e.target.value;
+    const formattedSql = sqlFormatter.format(e.target.value);
+    setInputSql(input);
+    setFormattedSql(formattedSql);
+    setMinifiedSql(pd.sqlmin(formattedSql));
+  };
+  const copyFormattedSql = (_: any) => copyTextToClipBoard(formattedSql);
+  const copyMinifiedSql = (_: any) => copyTextToClipBoard(minifiedSql);
+  const updateInputByFormatted = (_: any) => setInputSql(formattedSql);
+  return (
+    <div className="App">
+      <header className="App-header has-background-info">
+        <div className="title is-3 has-text-white-ter has-text-weight-bold">
+          SQL Formatter
+        </div>
+      </header>
+      <div className="App-main">
+        <div className="input-area">
+          <InputTextBox
+            value={inputSql}
+            placeholder="Please input SQL"
+            inputEventHandler={onInput}
+          />
+        </div>
+        <div className="display-area">
+          <div className="formatted-area">
+            <div className="button-area">
+              <div className="button-wrapper">
                 <SimpleButton
                   buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
                   buttonText="copy"
-                  onClickEventHandler={this.copyMinifiedSql}
-                  tooltip="Copy the minified SQL to the clipboard"
+                  onClickEventHandler={copyFormattedSql}
+                  tooltip="Copy the formatted SQL to the clipboard"
                 />
               </div>
-              <div className="text-area">
-                <ReadOnlyTextBox
-                  placeholder="This area shows minified input SQL"
-                  formattedSql={this.state.minifiedSql}
-                  wrap="off"
-                  class="no-scroll"
+              <div className="button-wrapper">
+                <SimpleButton
+                  buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
+                  buttonText="<<"
+                  onClickEventHandler={updateInputByFormatted}
+                  tooltip="Update the input area by the formatted SQL"
                 />
               </div>
+            </div>
+            <div className="text-area">
+              <ReadOnlyTextBox
+                placeholder="This area shows formatted input SQL"
+                formattedSql={formattedSql}
+              />
+            </div>
+          </div>
+          <div className="minified-area">
+            <div className="button-area">
+              <SimpleButton
+                buttonClass="is-info is-rounded is-fullwidth has-tooltip-info"
+                buttonText="copy"
+                onClickEventHandler={copyMinifiedSql}
+                tooltip="Copy the minified SQL to the clipboard"
+              />
+            </div>
+            <div className="text-area">
+              <ReadOnlyTextBox
+                placeholder="This area shows minified input SQL"
+                formattedSql={minifiedSql}
+                wrap="off"
+                class="no-scroll"
+              />
             </div>
           </div>
         </div>
       </div>
-    );
-  }
-
-  private updateDisplayAreaByInput(
-    event: React.ChangeEvent<HTMLTextAreaElement>
-  ) {
-    const formattedSql = sqlFormatter.format(event.target.value);
-    this.setState({
-      formattedSql,
-      inputSql: event.target.value,
-      minifiedSql: pd.sqlmin(formattedSql)
-    });
-  }
-
-  private updateInputAreaByFormattedSql(event: any) {
-    this.setState({ inputSql: this.state.formattedSql });
-  }
-
-  private copyTextToClipBoard(target: string) {
-    const divTemp = document.createElement("div");
-    divTemp.appendChild(document.createElement("pre")).textContent = target;
-
-    document.body.appendChild(divTemp);
-    const selection = document.getSelection();
-    if (selection != null) {
-      selection.selectAllChildren(divTemp);
-    }
-    document.execCommand("copy");
-
-    document.body.removeChild(divTemp);
-  }
+    </div>
+  );
 }
 
+function copyTextToClipBoard(target: string) {
+  const divTemp = document.createElement('div');
+  divTemp.appendChild(document.createElement('pre')).textContent = target;
+
+  document.body.appendChild(divTemp);
+  const selection = document.getSelection();
+  if (selection != null) {
+    selection.selectAllChildren(divTemp);
+  }
+  document.execCommand('copy');
+
+  document.body.removeChild(divTemp);
+}
 export default App;

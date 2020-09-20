@@ -3,9 +3,6 @@ own-memo.md
 
 docker_build
 
-# ignore css created by sccs
-src/*.css
-
 # Logs
 logs
 *.log
