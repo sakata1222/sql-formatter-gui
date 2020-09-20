@@ -1,1 +1,1 @@
-declare module "pretty-data";
+declare module 'pretty-data';

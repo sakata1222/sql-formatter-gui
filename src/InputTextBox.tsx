@@ -1,5 +1,5 @@
-import React from "react";
-import "./InputTextBox.scss";
+import React from 'react';
+import './InputTextBox.scss';
 
 type InputTextBoxProps = {
   readonly placeholder: string;
@@ -7,7 +7,7 @@ type InputTextBoxProps = {
   readonly inputEventHandler: (
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
-}
+};
 
 function InputTextBox(props: InputTextBoxProps) {
   return (

@@ -22,5 +22,14 @@ module.exports = {
   ],
   'rules': {
     'prettier/prettier': ['error', { 'singleQuote': true }],
+    "indent": ["error", 2],
+    "require-jsdoc" : 0,
+    "object-curly-spacing" : 0,
+    "comma-dangle": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
 };
