@@ -21,8 +21,10 @@
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "start": "yarn lint && react-scripts start",
-    "build": "yarn lint && react-scripts build",
+    "start": "yarn build && yarn serve",
+    "start:dev": "yarn lint && react-scripts start",
+    "build": "react-scripts build",
+    "serve": "serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts,.tsx",
@@ -44,6 +46,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "serve": "^11.3.2"
   }
 }

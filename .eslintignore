@@ -1,3 +1,4 @@
 **/*.scss
 src/serviceWorker.ts
-docker_build/**
+docker_build
+build
