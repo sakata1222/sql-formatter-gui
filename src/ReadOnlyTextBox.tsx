@@ -1,26 +1,25 @@
-import * as React from "react";
-import "./ReadOnlyTextBox.css";
+import React from "react";
+import "./ReadOnlyTextBox.scss";
 
-interface IProps {
+type ReadOnlyTextBoxProps = {
   readonly placeholder: string;
   readonly formattedSql: string;
   readonly wrap?: string;
   readonly class?: string;
 }
-class ReadOnlyTextBox extends React.Component<IProps> {
-  public render() {
-    return (
-      <div className={"TextBox " + this.props.class}>
-        <textarea
-          className="box"
-          readOnly={true}
-          placeholder={this.props.placeholder}
-          value={this.props.formattedSql}
-          wrap={this.props.wrap}
-        />
-      </div>
-    );
-  }
+
+function ReadOnlyTextBox(props: ReadOnlyTextBoxProps) {
+  return (
+    <div className={"TextBox " + props.class}>
+      <textarea
+        className="box"
+        readOnly={true}
+        placeholder={props.placeholder}
+        value={props.formattedSql}
+        wrap={props.wrap}
+      />
+    </div>
+  );
 }
 
 export default ReadOnlyTextBox;
