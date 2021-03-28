@@ -1,7 +1,6 @@
 import { pd } from 'pretty-data';
 import React, { useState } from 'react';
-import sqlFormatter from 'sql-formatter';
-
+import { format } from 'sql-formatter';
 import InputTextBox from './InputTextBox';
 import ReadOnlyTextBox from './ReadOnlyTextBox';
 
@@ -16,7 +15,7 @@ function App() {
 
   const onInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const input = e.target.value;
-    const formattedSql = sqlFormatter.format(e.target.value);
+    const formattedSql = format(e.target.value);
     setInputSql(input);
     setFormattedSql(formattedSql);
     setMinifiedSql(pd.sqlmin(formattedSql));
