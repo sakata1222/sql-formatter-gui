@@ -3,7 +3,7 @@
 [![docker-build](https://img.shields.io/docker/build/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
 [![docker-pulls](https://img.shields.io/docker/pulls/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
 
-![image](https://github.com/sakata1222/sql-formatter-gui/blob/master/demo_images/demo.gif)
+![image](https://raw.githubusercontent.com/sakata1222/sql-formatter-gui/master/demo_images/demo.gif)
 
 ## How to run
 
