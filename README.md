@@ -1,10 +1,23 @@
 # SQL formatter GUI
 
-![image](./demo_images/demo.gif)
+[![docker-build](https://img.shields.io/docker/build/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
+[![docker-pulls](https://img.shields.io/docker/pulls/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
+
+![image](https://github.com/sakata1222/sql-formatter-gui/blob/master/demo_images/demo.gif)
 
 ## How to run
 
-### Container
+### [Docker Hub](https://hub.docker.com/r/sakata1222/sql-formatter)
+
+```bash
+docker run --rm -p <your-port>:5000 sakata1222/sql-formatter
+```
+
+Access to `http://<your-host>:<your-port>`
+
+### Build yourself
+
+#### Container
 
 build a image
 
@@ -18,7 +31,7 @@ run as a container
 docker run --rm -p <your-port>:5000 sql-formatter
 ```
 
-### Production mode
+#### Production mode
 
 ```bash
 yarn start
@@ -30,7 +43,7 @@ If you have already built the sources, you can start the service as follows:
 yarn serve
 ```
 
-### Development mode
+#### Development mode
 
 ```bash
 yarn start:dev
