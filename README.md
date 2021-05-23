@@ -17,7 +17,7 @@ docker run --rm -p <your-port>:5000 sakata1222/sql-formatter
 
 Access to `http://<your-host>:<your-port>`
 
-### Build yourself
+### Build by yourself
 
 #### Container
 
