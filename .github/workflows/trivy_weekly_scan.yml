@@ -13,7 +13,7 @@ jobs:
         run: docker pull sakata1222/sql-formatter
 
       - name: Scan
-      - uses: lazy-actions/gitrivy@v2
+        uses: lazy-actions/gitrivy@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           image: sakata1222/sql-formatter
