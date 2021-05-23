@@ -1,0 +1,19 @@
+name: Vulnerability Scan
+
+on:
+  schedule:
+    - cron: '0 0 * * 6'
+
+jobs:
+  scan:
+    name: Weekly Vulnerability Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull docker image
+        run: docker pull sakata1222/sql-formatter
+
+      - name: Scan
+      - uses: lazy-actions/gitrivy@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          image: sakata1222/sql-formatter
