@@ -8,8 +8,14 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html/
 COPY --from=build /tmp/repo/build .
 RUN \
-  sed -i.backup -e 's/^\(\s*listen\s\s*\)80;/\15000;/' /etc/nginx/conf.d/default.conf && \
+  chown nginx:nginx -R /etc/nginx/conf.d/ && \
   sed -i.backup -e 's/^\(pid\s\s*\)\/var\/run\/nginx.pid;/\1\/tmp\/nginx.pid;/' /etc/nginx/nginx.conf && \
+  echo -e "\n\
+  \n\
+  server {\n\
+    listen 5000;\n\
+  }\n\
+  " >> /etc/nginx/conf.d/z_customize.conf && \
   sed -i.backup -e 's/^user\s\s*nginx;//' /etc/nginx/nginx.conf && \
   touch /tmp/nginx.pid && \
   chown nginx:nginx /tmp/nginx.pid && \
