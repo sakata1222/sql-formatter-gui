@@ -5,7 +5,7 @@ RUN yarn install --production && \
   yarn build
 
 FROM nginx:alpine
-WORKDIR /usr/share/nginx/html/
+WORKDIR /etc/nginx/html/
 COPY --from=build /tmp/repo/build .
 RUN \
   chown nginx:nginx -R /etc/nginx/conf.d/ && \
