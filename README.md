@@ -1,7 +1,6 @@
 # SQL formatter GUI
 
 [![docker-build](https://img.shields.io/docker/cloud/build/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
-[![docker-automated](https://img.shields.io/docker/cloud/automated/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
 [![docker-pulls](https://img.shields.io/docker/stars/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
 [![docker-pulls](https://img.shields.io/docker/pulls/sakata1222/sql-formatter.svg)](https://hub.docker.com/r/sakata1222/sql-formatter)
 
