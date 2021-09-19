@@ -16,7 +16,7 @@ jobs:
 
       - name: update packages by npm-check-updates
         run : |
-          npm install -g npx
+          npm install --no-save npx
           npx ncu -u
           yarn install
 
