@@ -1,0 +1,28 @@
+name: Update packages automatically
+
+on:
+  workflow_dispatch:
+
+jobs:
+  updates:
+    name: Update packages automatically
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+
+      - name: update packages by npm-check-updates
+        run : |
+          npx ncu -u
+          yarn install
+
+      - name: Create a PR
+        uses: peter-evans/create-pull-request@v3.10.1
+        with:
+            title: Automated package update
+            branch: update-packages
+            delete-branch: true
+            token: ${{ secrets.GITHUB }}
