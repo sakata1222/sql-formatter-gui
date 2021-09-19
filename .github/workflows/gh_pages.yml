@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+    pull_request:
+      branches:
+        - master
   workflow_dispatch:
 
 jobs:
@@ -21,3 +24,9 @@ jobs:
         run : |
           yarn install --production --frozen-lockfile
           PUBLIC_URL=https://sakata1222.github.io/sql-formatter-gui/ yarn build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
