@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Set a branch name to trigger deployment
+      - master
   pull_request:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
@@ -20,18 +20,28 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
 
+      - name: Prepare node env
+        run : echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/' >> .env
+
+      - name: Prepare node env for PR
+        if: github.event_name == 'pull_request'
+        run : echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/pr' >> .env
+
       - name: Build
         run : |
           yarn install --production --frozen-lockfile
           yarn build
+          pwd
+          ls
 
       - name: Move if PR
-        if: ${{ github.event.issue.pull_request }}
+        if: github.event_name == 'pull_request'
         run : |
           mkdir build_pr
           mv build/* build_pr/
           mkdir build/pr
           mv build_pr/* build/pr
+          find /home/runner/work/sql-formatter-gui/sql-formatter-gui/build/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+    {process.env.REACT_APP_BASE_URL != undefined && (
+      <BrowserRouter basename={process.env.REACT_APP_BASE_URL}></BrowserRouter>
+    )}
     <App />
   </React.StrictMode>,
   document.getElementById('root')
