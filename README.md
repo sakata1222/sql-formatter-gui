@@ -6,6 +6,8 @@
 
 ![image](https://raw.githubusercontent.com/sakata1222/sql-formatter-gui/master/demo_images/demo.gif)
 
+[Hosted on github.io](https://sakata1222.github.io/sql-formatter-gui/)
+
 ## How to run
 
 ### [Docker Hub](https://hub.docker.com/r/sakata1222/sql-formatter)
