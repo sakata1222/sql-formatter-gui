@@ -31,6 +31,8 @@ jobs:
         run : |
           yarn install --production --frozen-lockfile
           yarn build
+          pwd
+          ls
 
       - name: Move if PR
         if: github.event_name == 'pull_request'
@@ -39,6 +41,7 @@ jobs:
           mv build/* build_pr/
           mkdir build/pr
           mv build_pr/* build/pr
+          find /home/runner/work/sql-formatter-gui/sql-formatter-gui/build/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
