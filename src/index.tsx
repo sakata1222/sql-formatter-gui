@@ -7,8 +7,8 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    {process.env.REACT_APP_BASE_URL != undefined && (
-      <BrowserRouter basename={process.env.REACT_APP_BASE_URL}></BrowserRouter>
+    {process.env.PUBLIC_URL != undefined && (
+      <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
     )}
     <App />
   </React.StrictMode>,
