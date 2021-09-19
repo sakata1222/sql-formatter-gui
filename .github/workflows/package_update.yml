@@ -16,8 +16,7 @@ jobs:
 
       - name: update packages by npm-check-updates
         run : |
-          npm install --no-save npx
-          npx ncu -u
+          npx npm-check-updates -u
           yarn install
 
       - name: Create a PR
