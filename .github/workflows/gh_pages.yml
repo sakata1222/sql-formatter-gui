@@ -17,10 +17,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
 
-      - name: Prepare node env
-        run : echo 'PUBLIC_URL=https://sakata1222.github.io/sql-formatter-gui/' >> .env
-
       - name: Build
         run : |
           yarn install --production --frozen-lockfile
-          yarn build
+          PUBLIC_URL=https://sakata1222.github.io/sql-formatter-gui/ yarn build
