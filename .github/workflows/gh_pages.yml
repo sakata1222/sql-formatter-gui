@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  updates:
+    name: Deploy to GitHub pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+
+      - name: Build
+        run : |
+          yarn install --production --frozen-lockfile
+          yarn build
+
+      - name: Move if PR
+        if: ${{ github.event.issue.pull_request }}
+        run : |
+          mkdir build_pr
+          mv build/* build_pr/
+          mkdir build/pr
+          mv build_pr/* build/pr
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
