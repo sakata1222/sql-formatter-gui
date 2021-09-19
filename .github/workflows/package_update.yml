@@ -25,4 +25,4 @@ jobs:
             title: Automated package update
             branch: update-packages
             delete-branch: true
-            token: ${{ secrets.GITHUB }}
+            token: ${{ secrets.GITHUB_TOKEN }}
