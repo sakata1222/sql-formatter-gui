@@ -20,9 +20,15 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
 
+      - name: Prepare node env
+        run : echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/' >> .env
+
+      - name: Prepare node env for PR
+        if: ${{ github.event.issue.pull_request }}
+        run : echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/pr' >> .env
+
       - name: Build
         run : |
-          echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/' >> .env
           yarn install --production --frozen-lockfile
           yarn build
 
