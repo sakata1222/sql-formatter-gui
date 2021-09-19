@@ -22,6 +22,7 @@ jobs:
 
       - name: Build
         run : |
+          echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/' >> .env
           yarn install --production --frozen-lockfile
           yarn build
 
