@@ -24,7 +24,7 @@ jobs:
         run : echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/' >> .env
 
       - name: Prepare node env for PR
-        if: ${{ github.event.issue.pull_request }}
+        if: github.event_name == 'pull_request'
         run : echo 'REACT_APP_BASE_URL=https://sakata1222.github.io/sql-formatter-gui/pr' >> .env
 
       - name: Build
@@ -33,7 +33,7 @@ jobs:
           yarn build
 
       - name: Move if PR
-        if: ${{ github.event.issue.pull_request }}
+        if: github.event_name == 'pull_request'
         run : |
           mkdir build_pr
           mv build/* build_pr/
