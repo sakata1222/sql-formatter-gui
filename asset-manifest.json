@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.8ba158f3.chunk.css",
+    "main.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.3ee00c0b.chunk.css",
     "main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.cadd69dc.chunk.js",
     "main.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.cadd69dc.chunk.js.map",
     "runtime-main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/runtime-main.5866d05c.js",
@@ -10,14 +10,14 @@
     "static/js/2.ce38522f.chunk.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.ce38522f.chunk.js.map",
     "index.html": "https://sakata1222.github.io/sql-formatter-gui/index.html",
     "static/css/2.1e4c623c.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/2.1e4c623c.chunk.css.map",
-    "static/css/main.8ba158f3.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.8ba158f3.chunk.css.map",
+    "static/css/main.3ee00c0b.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.3ee00c0b.chunk.css.map",
     "static/js/2.ce38522f.chunk.js.LICENSE.txt": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.ce38522f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5866d05c.js",
     "static/css/2.1e4c623c.chunk.css",
     "static/js/2.ce38522f.chunk.js",
-    "static/css/main.8ba158f3.chunk.css",
+    "static/css/main.3ee00c0b.chunk.css",
     "static/js/main.cadd69dc.chunk.js"
   ]
 }
