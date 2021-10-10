@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.3ee00c0b.chunk.css",
-    "main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.ffb39c94.chunk.js",
-    "main.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.ffb39c94.chunk.js.map",
-    "runtime-main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/runtime-main.0d5d734c.js",
-    "runtime-main.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/runtime-main.0d5d734c.js.map",
+    "main.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.abbceba6.chunk.css",
+    "main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.3670d9b5.chunk.js",
+    "main.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.3670d9b5.chunk.js.map",
+    "runtime-main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/runtime-main.8123071e.js",
+    "runtime-main.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/runtime-main.8123071e.js.map",
     "static/css/2.1e4c623c.chunk.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/2.1e4c623c.chunk.css",
-    "static/js/2.e45d986b.chunk.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.e45d986b.chunk.js",
-    "static/js/2.e45d986b.chunk.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.e45d986b.chunk.js.map",
+    "static/js/2.36d58d34.chunk.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.36d58d34.chunk.js",
+    "static/js/2.36d58d34.chunk.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.36d58d34.chunk.js.map",
     "index.html": "https://sakata1222.github.io/sql-formatter-gui/index.html",
     "static/css/2.1e4c623c.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/2.1e4c623c.chunk.css.map",
-    "static/css/main.3ee00c0b.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.3ee00c0b.chunk.css.map",
-    "static/js/2.e45d986b.chunk.js.LICENSE.txt": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.e45d986b.chunk.js.LICENSE.txt"
+    "static/css/main.abbceba6.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.abbceba6.chunk.css.map",
+    "static/js/2.36d58d34.chunk.js.LICENSE.txt": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.36d58d34.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0d5d734c.js",
+    "static/js/runtime-main.8123071e.js",
     "static/css/2.1e4c623c.chunk.css",
-    "static/js/2.e45d986b.chunk.js",
-    "static/css/main.3ee00c0b.chunk.css",
-    "static/js/main.ffb39c94.chunk.js"
+    "static/js/2.36d58d34.chunk.js",
+    "static/css/main.abbceba6.chunk.css",
+    "static/js/main.3670d9b5.chunk.js"
   ]
 }
