@@ -1,7 +1,7 @@
 FROM node:lts-alpine as build
 WORKDIR /tmp/repo
 COPY . .
-RUN yarn install --production –frozen-lockfile && \
+RUN yarn install --production --frozen-lockfile && \
   yarn build
 
 FROM nginx:alpine
