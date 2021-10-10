@@ -16,7 +16,9 @@ jobs:
 
       - name: update packages by npm-check-updates
         run : |
+          yarn install –frozen-lockfile
           npx npm-check-updates -u
+          yarn install
           yarn upgrade
 
       - name: Create a PR
