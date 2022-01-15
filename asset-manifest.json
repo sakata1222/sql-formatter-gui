@@ -1,23 +1,13 @@
 {
   "files": {
-    "main.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.abbceba6.chunk.css",
-    "main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.3670d9b5.chunk.js",
-    "main.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.3670d9b5.chunk.js.map",
-    "runtime-main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/runtime-main.8123071e.js",
-    "runtime-main.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/runtime-main.8123071e.js.map",
-    "static/css/2.1e4c623c.chunk.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/2.1e4c623c.chunk.css",
-    "static/js/2.36d58d34.chunk.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.36d58d34.chunk.js",
-    "static/js/2.36d58d34.chunk.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.36d58d34.chunk.js.map",
+    "main.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.4cd5b8ca.css",
+    "main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.04572954.js",
     "index.html": "https://sakata1222.github.io/sql-formatter-gui/index.html",
-    "static/css/2.1e4c623c.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/2.1e4c623c.chunk.css.map",
-    "static/css/main.abbceba6.chunk.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.abbceba6.chunk.css.map",
-    "static/js/2.36d58d34.chunk.js.LICENSE.txt": "https://sakata1222.github.io/sql-formatter-gui/static/js/2.36d58d34.chunk.js.LICENSE.txt"
+    "main.4cd5b8ca.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.4cd5b8ca.css.map",
+    "main.04572954.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.04572954.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.8123071e.js",
-    "static/css/2.1e4c623c.chunk.css",
-    "static/js/2.36d58d34.chunk.js",
-    "static/css/main.abbceba6.chunk.css",
-    "static/js/main.3670d9b5.chunk.js"
+    "static/css/main.4cd5b8ca.css",
+    "static/js/main.04572954.js"
   ]
 }
