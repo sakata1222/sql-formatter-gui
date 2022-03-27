@@ -1,6 +1,6 @@
-import { pd } from 'pretty-data';
-import React, { useState } from 'react';
-import { format } from 'sql-formatter';
+import {pd} from 'pretty-data';
+import React, {useState} from 'react';
+import {format} from 'sql-formatter';
 import InputTextBox from './InputTextBox';
 import ReadOnlyTextBox from './ReadOnlyTextBox';
 
