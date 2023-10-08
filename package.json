@@ -23,7 +23,7 @@
     "mini-css-extract-plugin": "^2.7.0",
     "minimist": "^1.2.8",
     "nth-check": "^2.1.1",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.0",
     "pretty-data": "^0.40.0",
     "react": "^18.2.0",
