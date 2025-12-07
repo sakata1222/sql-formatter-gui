@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.85aa22ee.css",
-    "main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.b35a9b79.js",
+    "main.js": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.a66c4b2f.js",
     "index.html": "https://sakata1222.github.io/sql-formatter-gui/index.html",
     "main.85aa22ee.css.map": "https://sakata1222.github.io/sql-formatter-gui/static/css/main.85aa22ee.css.map",
-    "main.b35a9b79.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.b35a9b79.js.map"
+    "main.a66c4b2f.js.map": "https://sakata1222.github.io/sql-formatter-gui/static/js/main.a66c4b2f.js.map"
   },
   "entrypoints": [
     "static/css/main.85aa22ee.css",
-    "static/js/main.b35a9b79.js"
+    "static/js/main.a66c4b2f.js"
   ]
 }
