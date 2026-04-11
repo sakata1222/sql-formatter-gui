@@ -11,8 +11,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
 
       - name: update packages by npm-check-updates
         run : |
