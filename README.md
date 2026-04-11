@@ -37,17 +37,17 @@ docker run --rm -p <your-port>:5000 sql-formatter
 #### Production mode
 
 ```bash
-yarn start
+pnpm start
 ```
 
 If you have already built the sources, you can start the service as follows:
 
 ```bash
-yarn serve
+pnpm serve
 ```
 
 #### Development mode
 
 ```bash
-yarn start:dev
+pnpm start:dev
 ```

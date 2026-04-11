@@ -1,8 +1,8 @@
 FROM node:lts-alpine as build
 WORKDIR /tmp/repo
 COPY . .
-RUN yarn install --production --frozen-lockfile && \
-  yarn build
+RUN pnpm install --prod --frozen-lockfile && \
+  pnpm build
 
 FROM nginx:alpine
 WORKDIR /etc/nginx/html/

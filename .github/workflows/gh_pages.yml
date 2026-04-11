@@ -22,8 +22,8 @@ jobs:
 
       - name: Build
         run : |
-          yarn install --production --frozen-lockfile
-          PUBLIC_URL=https://sakata1222.github.io/sql-formatter-gui/ yarn build
+          pnpm install --prod --frozen-lockfile
+          PUBLIC_URL=https://sakata1222.github.io/sql-formatter-gui/ pnpm build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
