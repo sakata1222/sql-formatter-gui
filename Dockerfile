@@ -1,4 +1,7 @@
 FROM node:lts-alpine as build
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 WORKDIR /tmp/repo
 COPY . .
 RUN pnpm install --prod --frozen-lockfile && \
