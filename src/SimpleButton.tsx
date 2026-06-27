@@ -14,7 +14,7 @@ function SimpleButton(props: SimpleButtonProps) {
   return (
     <div className="simple-button-area">
       <button
-        className={"button " + props.buttonClass}
+        className={"button" + (props.buttonClass ? " " + props.buttonClass : "")}
         type="button"
         onClick={props.onClickEventHandler}
         data-tooltip={props.tooltip}

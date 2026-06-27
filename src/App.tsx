@@ -96,16 +96,6 @@ function sqlmin(text: string): string {
 }
 
 function copyTextToClipBoard(target: string) {
-  const divTemp = document.createElement("div");
-  divTemp.appendChild(document.createElement("pre")).textContent = target;
-
-  document.body.appendChild(divTemp);
-  const selection = document.getSelection();
-  if (selection != null) {
-    selection.selectAllChildren(divTemp);
-  }
-  document.execCommand("copy");
-
-  document.body.removeChild(divTemp);
+  navigator.clipboard.writeText(target);
 }
 export default App;

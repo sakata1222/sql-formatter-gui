@@ -10,7 +10,7 @@ type ReadOnlyTextBoxProps = {
 
 function ReadOnlyTextBox(props: ReadOnlyTextBoxProps) {
   return (
-    <div className={"TextBox " + props.class}>
+    <div className={"TextBox" + (props.class ? " " + props.class : "")}>
       <textarea
         className="box"
         readOnly={true}

@@ -9,10 +9,9 @@ const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
   <React.StrictMode>
-    {import.meta.env.BASE_URL != undefined && (
-      <BrowserRouter basename={import.meta.env.BASE_URL}></BrowserRouter>
-    )}
-    <App />
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
 );
 
