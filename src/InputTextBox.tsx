@@ -1,11 +1,11 @@
-import React from 'react';
-import './InputTextBox.scss';
+import React from "react";
+import "./InputTextBox.scss";
 
 type InputTextBoxProps = {
   readonly placeholder: string;
   readonly value?: string;
   readonly inputEventHandler: (
-    event: React.ChangeEvent<HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => void;
 };
 
