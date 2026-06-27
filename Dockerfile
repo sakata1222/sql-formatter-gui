@@ -4,12 +4,12 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 WORKDIR /tmp/repo
 COPY . .
-RUN pnpm install --prod --frozen-lockfile && \
+RUN pnpm install --frozen-lockfile && \
   pnpm build
 
 FROM nginx:alpine
 WORKDIR /etc/nginx/html/
-COPY --from=build /tmp/repo/build .
+COPY --from=build /tmp/repo/dist .
 RUN \
   chown nginx:nginx -R /etc/nginx/conf.d/ && \
   sed -i.backup -e 's/^\(pid\s\s*\)\/var\/run\/nginx.pid;/\1\/tmp\/nginx.pid;/' /etc/nginx/nginx.conf && \

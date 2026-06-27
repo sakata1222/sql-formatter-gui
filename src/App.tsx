@@ -1,24 +1,23 @@
-import {pd} from 'pretty-data';
-import React, {useState} from 'react';
-import {format} from 'sql-formatter';
-import InputTextBox from './InputTextBox';
-import ReadOnlyTextBox from './ReadOnlyTextBox';
+import React, { useState } from "react";
+import { format } from "sql-formatter";
+import InputTextBox from "./InputTextBox";
+import ReadOnlyTextBox from "./ReadOnlyTextBox";
 
-import './App.scss';
-import './bulma.scss';
-import SimpleButton from './SimpleButton';
+import "./App.scss";
+import "./bulma.scss";
+import SimpleButton from "./SimpleButton";
 
 function App() {
-  const [inputSql, setInputSql] = useState('');
-  const [formattedSql, setFormattedSql] = useState('');
-  const [minifiedSql, setMinifiedSql] = useState('');
+  const [inputSql, setInputSql] = useState("");
+  const [formattedSql, setFormattedSql] = useState("");
+  const [minifiedSql, setMinifiedSql] = useState("");
 
   const onInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const input = e.target.value;
     const formattedSql = format(e.target.value);
     setInputSql(input);
     setFormattedSql(formattedSql);
-    setMinifiedSql(pd.sqlmin(formattedSql));
+    setMinifiedSql(sqlmin(formattedSql));
   };
   const copyFormattedSql = (_: any) => copyTextToClipBoard(formattedSql);
   const copyMinifiedSql = (_: any) => copyTextToClipBoard(minifiedSql);
@@ -89,16 +88,23 @@ function App() {
   );
 }
 
+function sqlmin(text: string): string {
+  return text
+    .replace(/\s{1,}/g, " ")
+    .replace(/\s{1,}\(/g, "(")
+    .replace(/\s{1,}\)/g, ")");
+}
+
 function copyTextToClipBoard(target: string) {
-  const divTemp = document.createElement('div');
-  divTemp.appendChild(document.createElement('pre')).textContent = target;
+  const divTemp = document.createElement("div");
+  divTemp.appendChild(document.createElement("pre")).textContent = target;
 
   document.body.appendChild(divTemp);
   const selection = document.getSelection();
   if (selection != null) {
     selection.selectAllChildren(divTemp);
   }
-  document.execCommand('copy');
+  document.execCommand("copy");
 
   document.body.removeChild(divTemp);
 }

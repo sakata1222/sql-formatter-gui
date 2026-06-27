@@ -1,1 +1,1 @@
-declare module 'sql-formatter';
+declare module "sql-formatter";

@@ -1,19 +1,19 @@
-import React from 'react';
-import {createRoot} from 'react-dom/client';
-import {BrowserRouter} from 'react-router-dom';
-import './index.scss';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.scss";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
-    <React.StrictMode>
-      {process.env.PUBLIC_URL != undefined && (
-        <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
-      )}
-      <App />
-    </React.StrictMode>,
+  <React.StrictMode>
+    {import.meta.env.BASE_URL != undefined && (
+      <BrowserRouter basename={import.meta.env.BASE_URL}></BrowserRouter>
+    )}
+    <App />
+  </React.StrictMode>,
 );
 
 // If you want your app to work offline and load faster, you can change

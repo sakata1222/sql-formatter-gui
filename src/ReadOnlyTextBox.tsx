@@ -1,5 +1,5 @@
-import React from 'react';
-import './ReadOnlyTextBox.scss';
+import React from "react";
+import "./ReadOnlyTextBox.scss";
 
 type ReadOnlyTextBoxProps = {
   readonly placeholder: string;
@@ -10,7 +10,7 @@ type ReadOnlyTextBoxProps = {
 
 function ReadOnlyTextBox(props: ReadOnlyTextBoxProps) {
   return (
-    <div className={'TextBox ' + props.class}>
+    <div className={"TextBox " + props.class}>
       <textarea
         className="box"
         readOnly={true}
