@@ -2,6 +2,7 @@
   "name": "sql-formatter-gui",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.9.0",
   "type": "module",
   "dependencies": {
     "@creativebulma/bulma-tooltip": "^1.2.0",
@@ -32,12 +33,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild"
     ]
   },
   "devDependencies": {
