@@ -12,7 +12,7 @@ WORKDIR /etc/nginx/html/
 COPY --from=build /tmp/repo/dist .
 RUN \
   chown nginx:nginx -R /etc/nginx/conf.d/ && \
-  sed -i.backup -e 's/^\(pid\s\s*\)\/var\/run\/nginx.pid;/\1\/tmp\/nginx.pid;/' /etc/nginx/nginx.conf && \
+  sed -i.backup -e 's|^\(pid\s\s*\).*/nginx\.pid;|\1/tmp/nginx.pid;|' /etc/nginx/nginx.conf && \
   echo -e "\n\
   \n\
   server {\n\
