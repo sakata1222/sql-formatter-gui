@@ -2,3 +2,7 @@
   box-sizing: border-box;
   border: none;
 }
+
+.button.is-info {
+  --bulma-button-color-l: 100%;
+}
