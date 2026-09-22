@@ -1,2 +1,9 @@
-@import '../node_modules/bulma/bulma.scss';
+@use '../node_modules/bulma/sass/utilities';
+@use '../node_modules/bulma/sass/themes';
+@use '../node_modules/bulma/sass/base';
+@use '../node_modules/bulma/sass/elements/box';
+@use '../node_modules/bulma/sass/elements/button';
+@use '../node_modules/bulma/sass/elements/title';
+@use '../node_modules/bulma/sass/helpers/color';
+@use '../node_modules/bulma/sass/helpers/typography';
 @import '../node_modules/@creativebulma/bulma-tooltip/dist/bulma-tooltip.min.css';
