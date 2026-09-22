@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { format } from "sql-formatter";
+import { formatDialect, sql } from "sql-formatter";
 import InputTextBox from "./InputTextBox";
 import ReadOnlyTextBox from "./ReadOnlyTextBox";
 
@@ -14,7 +14,7 @@ function App() {
 
   const onInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const input = e.target.value;
-    const formattedSql = format(e.target.value);
+    const formattedSql = formatDialect(e.target.value, { dialect: sql });
     setInputSql(input);
     setFormattedSql(formattedSql);
     setMinifiedSql(sqlmin(formattedSql));
